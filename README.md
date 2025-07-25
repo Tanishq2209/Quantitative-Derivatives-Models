@@ -29,8 +29,19 @@ Offer hands-on code examples that bridge theory and practice
 Highlight numerical methods commonly used in pricing exotic options
 Serve as a sandbox for building and testing custom strategies
 
+
+## Repository Structure
+
+```
+├── models          # Classical and advanced pricing models
+├── simulations     # Monte Carlo and Stochastic processes implementations
+├── hedging         # Risk mitigations and Greeks analysis
+├── approach        # Backtesting using historical data analysis
+└── applications    # Helpful for option pricing and risk management.
+```
+
 #### 📁 Structure
-/models            - Classic and advanced pricing models
+/models            - 
 /simulations       - Monte Carlo and stochastic process implementations
 /hedging           - Risk management and Greeks analysis
 /backtesting       - Historical data analysis and validation tools
