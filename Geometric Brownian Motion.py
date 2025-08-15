@@ -2,15 +2,15 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def GeneratePaths_GBM_ABM(m,n,T,r,sigma,S0):    
-    
-    # Fixing random seed
+    # Random seeding
     np.random.seed(42)
         
     Z = np.random.normal(0.0,1.0,[m,n]) # Here m is no. of paths and n is no. of steps
     X = np.zeros([m, n+1])
     S = np.zeros([m, n+1])
     time = np.zeros([n+1])
-        
+    
+    # Setting initial condition    
     X[:,0] = np.log(S0)
     
     dt = T / n
@@ -19,7 +19,7 @@ def GeneratePaths_GBM_ABM(m,n,T,r,sigma,S0):
         if m > 1:
             Z[:,i] = (Z[:,i] - np.mean(Z[:,i])) / np.std(Z[:,i])
             
-        X[:,i+1] = X[:,i] + (r - 0.5 * sigma **2 ) * dt + sigma * np.power(dt, 0.5)*Z[:,i]
+        X[:,i+1] = X[:,i] + (r - (sigma **2)/2 ) * dt + sigma * np.power(dt, 1/2)*Z[:,i]
         time[i+1] = time[i] +dt
         
     #Compute exponent of ABM
